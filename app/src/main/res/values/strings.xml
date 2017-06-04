@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">KioskMode-SinglePurposeApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="kiosk_mode">Kiosk Mode/ Single purpose application</string>
+
+    <!--lock unlock-->
+    <string name="enter_password">Enter Pin</string>
+    <string name="invalid_password">Invalid password.</string>
+    <string name="setting_title">Kiosk Mode Setting</string>
+    <string name="setting_lock_device">Lock</string>
+    <string name="setting_unlock_device">Unlock</string>
+    <string name="setting_device_locked">Device is locked</string>
+    <string name="setting_device_unlocked">Device is unlocked</string>
+</resources>
+
