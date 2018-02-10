@@ -46,6 +46,22 @@ Basic crucks to achieve above -
         Log.i(TAG, "onUserLeaveHint()...");
         kioskMode.moveTaskToFront(this);
     }
+    
+    /**
+     * call this from onUserLeaveHint() from every activity
+     * Ask that the task associated with a given task ID be moved to the
+     * front of the stack, so it is now visible to the user.
+     *
+     * @param activity to move in front
+     */
+    public void moveTaskToFront(Activity activity) {
+        boolean isLocked = isLocked(activity);
+        if (!isLocked) {
+            return;
+        }
+        ((ActivityManager) activity.getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE))
+                .moveTaskToFront(activity.getTaskId(), 1);
+    }
 ```
 *. My kiosk mode singlton class to manage lock unlock -
 ```
@@ -63,6 +79,7 @@ public class KioskMode {
     }
 ```    
 
-For detail configuration refer-
+For detail configuration please visit-
+
 http://dinkarcse.blogspot.in/2017/06/android-kiosk-modesingle-purpose-app.html
 
